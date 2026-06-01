@@ -47,4 +47,12 @@ The main issue I encountered was during the Cursor installation process. Initial
 I also discovered that Git was not installed on my machine. When running git commands, macOS prompted me to install the Developer Tools package. After installing the required tools and configuring my Git credentials, I was able to clone the repository and continue the setup process successfully.
 
 
+<<<<<<< HEAD
 
+=======
+Clone el repositorio con cd ~/Documents
+git clone https://github.com/claraibarzabal/AItools.git
+
+En Cursor hice click en Open folder y abri AItools en mis Documents.
+5. Open the repository in Cursor
+>>>>>>> da7e2e7664d870bc7aca8c94d091a38c3a3c4254
