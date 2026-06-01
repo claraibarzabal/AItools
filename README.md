@@ -1,5 +1,3 @@
-Puedes escribirlo de forma más profesional y clara así:
-
 # AItools
 
 ## Tools Installed
@@ -11,38 +9,54 @@ Puedes escribirlo de forma más profesional y clara así:
 
 ## Steps Completed
 
-1. Installed Cursor on my Mac.
+### 1. Installed Cursor IDE
 
-   * Downloaded the .dmg file from cursor.com.
-   * Opened the installer and dragged Cursor into the Applications folder.
+I downloaded Cursor from cursor.com and installed it on my Mac by dragging the application into the Applications folder.
 
-2. Installed AI coding extensions.
+### 2. Installed AI Coding Extensions
 
-   * Opened the Extensions panel in Cursor using Cmd + Shift + X.
-   * Searched for and installed Claude Code and Codex.
+Using the Extensions panel in Cursor (Cmd + Shift + X), I searched for and installed the Claude Code and Codex extensions.
 
-3. Created a public GitHub repository named AItools.
+### 3. Created a Public GitHub Repository
 
-4. Installed Git and configured my development environment.
+I created a public GitHub repository named **AItools**.
 
-   * Installed Apple's Developer Tools.
-   * Verified Git installation (Git version 2.39.5).
-   * Configured my Git username and email.
+### 4. Installed and Configured Git
 
-5. Cloned the repository locally.
+I installed Apple's Developer Tools, which included Git, verified the installation, and configured my Git username and email.
 
-   * Navigated to the Documents folder.
-   * Ran:
-     git clone https://github.com/claraibarzabal/AItools.git
+### 5. Cloned the Repository
 
-6. Opened the repository in Cursor.
+I cloned the repository locally by navigating to the Documents directory and running:
 
-   * Used File → Open Folder.
-   * Opened the AItools repository from the Documents directory.
+```bash
+git clone https://github.com/claraibarzabal/AItools.git
+```
+
+### 6. Opened the Repository in Cursor
+
+I opened the AItools repository in Cursor using **File → Open Folder**.
+
+### 7. Created the README File
+
+I created a README.md file documenting the tools installed, the setup process, and the issues encountered during the configuration.
+
+### 8. Committed and Pushed Changes
+
+After completing the setup, I committed my changes and pushed them to the GitHub repository.
 
 ## Issues Encountered and Solutions
 
-The main issue I encountered was during the Cursor installation process. Initially, I expected the .dmg file to install the application automatically when opened. After troubleshooting, I realized that on macOS the application must be manually dragged into the Applications folder. Once I completed that step, Cursor installed successfully.
+### Cursor Installation
 
-I also discovered that Git was not installed on my machine. When running git commands, macOS prompted me to install the Developer Tools package. After installing the required tools and configuring my Git credentials, I was able to clone the repository and continue the setup process successfully.
+Initially, I expected the .dmg file to install Cursor automatically when opened. After troubleshooting, I realized that on macOS applications must be manually dragged into the Applications folder. Once I completed this step, Cursor installed successfully.
+
+### Git Installation
+
+When attempting to use Git, I discovered it was not installed on my machine. macOS prompted me to install Apple's Developer Tools. After completing the installation and configuring my Git credentials, I was able to clone the repository and continue the setup process.
+
+### GitHub Synchronization Conflict
+
+When pushing my local changes to GitHub, I encountered a conflict because the remote repository contained changes that were not present in my local copy. I resolved the issue by pulling the remote changes, reviewing the conflicting README file, and merging the content before committing and pushing the final version.
+
 
