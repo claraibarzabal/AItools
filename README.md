@@ -12,6 +12,7 @@ Hice clic en install developer tools. Se instalo la version o git version 2.39.5
 Confgure mi usuario de git con nombre y email.
 
 Clone el repositorio con cd ~/Documents
-git clone 
+git clone https://github.com/claraibarzabal/AItools.git
 
+En Cursor hice click en Open folder y abri AItools en mis Documents.
 5. Open the repository in Cursor
