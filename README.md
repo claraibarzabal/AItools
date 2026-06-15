@@ -60,6 +60,3 @@ When attempting to use Git, I discovered it was not installed on my machine. mac
 When I created the GitHub repository, it already contained a README file generated on GitHub. Later, I created and modified a local README file with different content. When I attempted to push my changes, Git detected that both the local and remote repositories contained changes to the same file and prevented the push.
 
 To resolve the issue, I pulled the remote changes, reviewed the merge conflict in the README file, combined the content appropriately, and then committed and pushed the final version to GitHub.
-
-
-
