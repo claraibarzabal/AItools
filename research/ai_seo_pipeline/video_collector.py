@@ -48,7 +48,6 @@ def _entry_timestamp(entry: dict[str, Any]) -> int:
 
 def fetch_recent_videos(
     channel_url: str,
-    channel_id: str,
     expert_name: str,
     limit: int = 20,
 ) -> list[VideoInfo]:
@@ -56,12 +55,13 @@ def fetch_recent_videos(
     global VIDEO_CACHE
 
     # 🧠 1. CACHE FIRST (CRÍTICO)
-    if channel_id in VIDEO_CACHE:
+    cache_key = channel_url  # usamos URL como clave estable
+
+    if cache_key in VIDEO_CACHE:
         logger.info("Video cache hit for %s", expert_name)
 
-        cached = VIDEO_CACHE[channel_id]
+        cached = VIDEO_CACHE[cache_key]
 
-        # reconstrucción segura si viene de JSON
         return [
             VideoInfo(**v) if isinstance(v, dict) else v
             for v in cached
@@ -112,7 +112,6 @@ def fetch_recent_videos(
         videos.append(
             VideoInfo(
                 video_id=str(video_id),
-                channel_id=channel_id,
                 expert_name=expert_name,
                 title=entry.get("title") or "",
                 published_at=_format_timestamp(timestamp),
@@ -124,7 +123,7 @@ def fetch_recent_videos(
         )
 
     # 🧠 2. SAVE CACHE (CRÍTICO)
-    VIDEO_CACHE[channel_id] = [
+    VIDEO_CACHE[cache_key] = [
         v.__dict__ for v in videos
     ]
     save_cache("videos", VIDEO_CACHE)

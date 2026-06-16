@@ -9,7 +9,6 @@ from typing import Any
 
 import yaml
 
-from .channel_finder import discover_channel, channels_to_dataframe
 from .config import (
     CHANNELS_CSV,
     DATA_DIR,
@@ -28,6 +27,7 @@ from .storage.naming import build_filename
 from .storage.local_store import save_transcript_file
 import hashlib
 from ai_seo_pipeline.cache_store import load_cache, save_cache
+import pandas as pd
 
 TRANSCRIPT_CACHE = load_cache("transcripts")
 
@@ -52,32 +52,16 @@ def ensure_directories() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
-def collect_channels(config: dict[str, Any]) -> Any:
-    settings = config.get("settings", {})
-    max_search = settings.get("max_search_results", 5)
-    channels = []
+def collect_channels(config):
+    import pandas as pd
 
-    for expert in config.get("experts", []):
-        name = expert["name"]
+    df = pd.DataFrame(config["experts"]).rename(
+        columns={"name": "expert_name"}
+    )
 
-        logger.info("Discovering channel for %s", name)
+    # asegurás solo columnas necesarias
+    df = df[["expert_name", "channel_url"]]
 
-        channel = discover_channel(
-            expert_name=name,
-            channel_handle=expert.get("channel_handle"),
-            channel_url=expert.get("channel_url"),
-            max_search_results=max_search,
-        )
-
-        if channel:
-            channels.append(channel)
-            logger.info("Found channel: %s (%s)", channel.channel_name, channel.channel_url)
-        else:
-            logger.warning("Could not find channel for %s", name)
-
-        time.sleep(0.5)
-
-    df = channels_to_dataframe(channels)
     save_csv(df, CHANNELS_CSV)
     return df
 
@@ -91,7 +75,6 @@ def collect_videos(channels_df: Any, videos_per_channel: int = 20) -> Any:
 
         videos = fetch_recent_videos(
             channel_url=row["channel_url"],
-            channel_id=row["channel_id"],
             expert_name=row["expert_name"],
             limit=videos_per_channel,
         )
@@ -137,7 +120,6 @@ def build_transcripts_dataset(videos_df: Any) -> None:
             "title": video["title"],
             "published_at": video["published_at"],
             "url": video_url,
-            "channel_id": video["channel_id"],
             "expert_name": video["expert_name"],
             "transcript": transcript,
         }
