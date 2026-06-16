@@ -1,26 +1,31 @@
 experts:
+
   - name: Neil Patel
+    handle: "@NeilPatel"
     channel_url: https://www.youtube.com/@NeilPatel
 
   - name: Nathan Gotch
+    handle: "@NathanGotch"
     channel_url: https://www.youtube.com/@NathanGotch
 
   - name: Julian Goldie
+    handle: "@JulianGoldieSEO"
     channel_url: https://www.youtube.com/@JulianGoldieSEO
 
   - name: Matt Diggity
+    handle: "@MattDiggity"
     channel_url: https://www.youtube.com/@MattDiggity
 
   - name: Ahrefs
+    handle: "@AhrefsCom"
     channel_url: https://www.youtube.com/@AhrefsCom
 
   - name: Authority Hacker
+    handle: "@AuthorityHacker"
     channel_url: https://www.youtube.com/@AuthorityHacker
 
-  - name: Grace Leung
-    channel_url: https://www.youtube.com/@GraceLeung
-
   - name: Exposure Ninja
+    handle: "@ExposureNinja"
     channel_url: https://www.youtube.com/@ExposureNinja
 
 settings:

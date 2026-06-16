@@ -28,6 +28,7 @@ from .storage.local_store import save_transcript_file
 import hashlib
 from ai_seo_pipeline.cache_store import load_cache, save_cache
 import pandas as pd
+from ai_seo_pipeline.youtube_resolver import resolve_channel_id
 
 TRANSCRIPT_CACHE = load_cache("transcripts")
 
@@ -55,40 +56,40 @@ def ensure_directories() -> None:
 def collect_channels(config):
     import pandas as pd
 
-    df = pd.DataFrame(config["experts"]).rename(
-        columns={"name": "expert_name"}
-    )
+    rows = []
 
-    # asegurás solo columnas necesarias
-    df = df[["expert_name", "channel_url"]]
+    for expert in config["experts"]:
+        rows.append({
+            "expert_name": expert["name"],
+            "handle": expert["handle"],
+        })
 
+    df = pd.DataFrame(rows)
     save_csv(df, CHANNELS_CSV)
     return df
 
-
-def collect_videos(channels_df: Any, videos_per_channel: int = 20) -> Any:
+def collect_videos(channels_df, videos_per_channel=20):
     all_videos = []
 
     for _, row in channels_df.iterrows():
 
         logger.info("Collecting videos for %s", row["expert_name"])
 
+        channel_id = resolve_channel_id(row["handle"])
+
         videos = fetch_recent_videos(
-            channel_url=row["channel_url"],
+            channel_id=channel_id,
             expert_name=row["expert_name"],
             limit=videos_per_channel,
         )
 
         all_videos.extend(videos)
 
-        logger.info("Collected %d videos for %s", len(videos), row["expert_name"])
-
         time.sleep(0.5)
 
     df = videos_to_dataframe(all_videos)
     save_csv(df, VIDEOS_CSV)
     return df
-
 
 def build_transcripts_dataset(videos_df: Any) -> None:
 
