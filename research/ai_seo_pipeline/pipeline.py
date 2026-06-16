@@ -100,19 +100,51 @@ def build_transcripts_dataset(videos_df: Any) -> None:
 
     videos = list(videos_df.to_dict("records"))
 
+    logger.info(
+        "Total videos in transcript stage: %s",
+        len(videos)
+    )
+
     video_urls = [v["url"] for v in videos]
 
+    logger.info(
+        "Video URLs sent: %s",
+        len(video_urls)
+    )
+
     # 🚀 BATCH CALL (10x faster)
-    transcripts_map = fetch_transcripts_batch(video_urls, max_workers=10)
+    transcripts_map = fetch_transcripts_batch(
+        video_urls,
+        max_workers=1
+    )
+
+    logger.info(
+        "Transcripts returned: %s",
+        len(transcripts_map)
+    )
+
+    logger.info(
+        "Transcript keys sample: %s",
+        list(transcripts_map.keys())[:5]
+    )
 
     for video in videos:
 
         video_url = video["url"]
         transcript = transcripts_map.get(video_url)
 
+        print(
+            "PIPELINE:",
+            video["video_id"],
+            len(transcript) if transcript else 0
+        )
+
         if not transcript:
-            logger.warning("No transcript for video %s", video["video_id"])
-            continue
+            logger.warning(
+                "No transcript for video %s",
+                video["video_id"]
+            )
+            transcript = ""
 
         filename = build_filename(video)
 
@@ -123,6 +155,7 @@ def build_transcripts_dataset(videos_df: Any) -> None:
             "url": video_url,
             "expert_name": video["expert_name"],
             "transcript": transcript,
+            "has_transcript": bool(transcript),
         }
 
         save_transcript_file(filename, data)
@@ -167,6 +200,9 @@ def run_pipeline(
             raise RuntimeError("No channels discovered")
 
         videos_df = collect_videos(channels_df, videos_per_channel=per_channel)
+    
+    logger.info("VIDEOS DF SHAPE: %s", videos_df.shape)
+    logger.info("VIDEOS DF COLUMNS: %s", list(videos_df.columns))
 
     # 🔥 NEW STEP: Supadata → files
     build_transcripts_dataset(videos_df)

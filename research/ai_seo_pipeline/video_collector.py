@@ -58,7 +58,7 @@ def fetch_recent_videos(
     limit: int = 20,
 ) -> List[VideoInfo]:
 
-    cache_key = channel_id
+    cache_key = f"{channel_id}_{limit}"
 
     # 🧠 CACHE FIRST
     if cache_key in VIDEO_CACHE:
