@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.DS_Store
+
+# Generated data (keep folder structure via .gitkeep)
+data/youtube/*.csv
+output/*.csv
+output/*.md
+output/visualizations/*.png
+
+# Keep NLTK data local
+nltk_data/
