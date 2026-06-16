@@ -4,6 +4,6 @@
   "published_at": "2026-06-11T13:00:32Z",
   "url": "https://www.youtube.com/watch?v=1Zk569OnRHg",
   "expert_name": "Ahrefs",
-  "transcript": "",
-  "has_transcript": false
+  "transcript": "Codex versus Claude code. I tried both and here's how it went. With Codex, I prompted it and it would spend 10 to 15 minutes writing code. I'd open the file and the app looked bad and didn't work the way I wanted it to. Here's why. When you're building something complex, there are dozens of decisions to make. Architecture, data flow, edge cases. [music] Codex, it just never asked me anything. It would infer and then it would build, which is great for very simple tools. Claude code does the [music] opposite. Before it writes a single line, it has this thing called planning mode. It maps the whole project out with you. It asks [music] questions. It surfaces the ambiguity instead of burying it. It's the [music] difference between a contractor who sits down with you and reads through the blueprints versus one who just starts swinging the hammers based on their own assumptions. >> [music] >> And the stuff I've shipped because of that, mind-blowing. Outreach tools, editing automations, and even fully autonomous agent workflows [music] in hours. And this is just one of the many reasons why I switched from ChatGPT to Claude.",
+  "has_transcript": true
 }

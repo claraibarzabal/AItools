@@ -4,6 +4,6 @@
   "published_at": "2026-06-04T13:00:06Z",
   "url": "https://www.youtube.com/watch?v=b6kA79R96Cc",
   "expert_name": "Ahrefs",
-  "transcript": "",
-  "has_transcript": false
+  "transcript": "I spent two years trying to train ChatGPT to write like me. I uploaded old scripts, I pasted [music] Slack messages, probably over 100,000 words of context. And it worked [music] for about two paragraphs. Then it'd slip right back into the same phrases every single time. It's not a feature, it's a philosophy. In the world of marketing, unlock this, game changer that. [music] And don't get me started on the em dashes. So I tried Claude and did one thing differently. I told it not to write anything yet. And what came back wasn't, \"Your tone is conversational and direct.\" >> [music] >> It was specific. It noticed I avoid em dashes, that I use one-word sentences as punchlines, that my paragraphs get shorter when I'm building to a point. So I took the parts that felt right, dropped them into the custom instructions, and now my first drafts for content are faster, better, and tighter than ever. And this is just one of the many reasons why I switched from ChatGPT to Claude.",
+  "has_transcript": true
 }

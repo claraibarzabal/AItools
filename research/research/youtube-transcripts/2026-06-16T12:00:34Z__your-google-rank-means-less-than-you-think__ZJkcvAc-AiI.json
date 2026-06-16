@@ -4,6 +4,6 @@
   "published_at": "2026-06-16T12:00:34Z",
   "url": "https://www.youtube.com/watch?v=ZJkcvAc-AiI",
   "expert_name": "Neil Patel",
-  "transcript": "",
-  "has_transcript": false
+  "transcript": "At NP Digital, we studied 500 commercial keywords and ran 4,300 related prompts through multiple LLMs. What we found genuinely surprised me. Ranking number one on Google, which is harder and more expensive to achieve than ever, only gives you a 31% chance of appearing [music] in AI answers. By rank four, that drops to 2.6%. And the most shocking part is that 75% of all AI citations go to sources that don't even appear in Google's top 10 results. That's not a bug. That's the whole new game. Your Google rank and your AI citation rate are two completely separate scores now. You can rank number one and totally be invisible in AI.",
+  "has_transcript": true
 }
