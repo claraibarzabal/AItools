@@ -1,0 +1,10 @@
+# entorno
+venv/
+.env
+
+# cache
+__pycache__/
+*.pyc
+
+# logs
+*.log

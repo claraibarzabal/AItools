@@ -23,7 +23,7 @@ from .video_collector import fetch_recent_videos, videos_to_dataframe
 from .visualizer import create_visualizations
 
 # NEW (Supadata + file storage)
-from .transcript_client import fetch_transcript_supadata
+from .transcript_client import fetch_transcripts_batch
 from .storage.naming import build_filename
 from .storage.local_store import save_transcript_file
 import hashlib
