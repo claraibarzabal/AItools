@@ -17,6 +17,45 @@ The project is designed as the data collection layer for future NLP, semantic an
 
 ---
 
+## Sources
+
+### YouTube Experts (used in the AI-Powered SEO Research Pipeline)
+
+The following YouTube channels were selected as primary sources for collecting SEO and AI Search Optimization content:
+
+* Neil Patel
+* Nathan Gotch
+* Julian Goldie
+* Matt Diggity
+* Ahrefs
+* Authority Hacker
+* Exposure Ninja
+* Nico | AI Ranking
+* Vendasta
+* Asier López Ruiz
+
+### LinkedIn Experts (added manually)
+
+The following professionals were selected as additional sources of insights and industry updates:
+
+* Aleyda Solís
+* Britney Muller
+* Crystal Carter
+* Kevin Indig
+* Koray Tuğberk GÜBÜR
+* Lily Ray
+* Matt Diggity
+* Nathan Gotch
+* Olaf Kopp
+* Rand Fishkin
+
+## Why These Experts?
+
+These experts were selected because they are well-recognized professionals in SEO, AI Search, and digital marketing. Many of them run successful agencies, SEO software companies, or consulting businesses, giving them extensive hands-on experience in the field.
+
+Their content consistently focuses on practical strategies, real-world case studies, and current industry trends rather than purely theoretical concepts. This makes them reliable sources for collecting high-quality transcripts and insights that reflect modern SEO and AI search best practices.
+
+
 ## Project Structure
 
 ```
