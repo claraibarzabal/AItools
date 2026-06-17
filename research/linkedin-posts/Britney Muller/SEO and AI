@@ -1,0 +1,25 @@
+Hot take: Y'all are just rediscovering SEO by way of "AI SEO" or "GEO"...
+
+Everyone's acting like optimizing for LLMs is an entirely new discipline that we need to do ASAP. It's not.
+
+Let's clarify a few things:
+
+Two different mechanisms:
+1. Getting mentioned by an LLM (no URL) = Being in training data 
+2. Getting a URL cited by an LLM = Ranking in search results
+
+For # 1 it's a popularity contest. The more you appear online in contextually relevant discussions, the higher your odds of being baked into the model's outputs. "Brand mentions are the new backlinks" thinking applies here.
+
+For # 2  👏 Every  👏 Single  👏 URL 👏 you see in an LLM output comes from a search engine API (Google or Bing)
+
+LLMs ARE NOT INFORMATION RETRIEVAL SYSTEMS (been trying to tell y'all this for years..)
+
+So, when you hear or say things like: 
+
+"LLMs aren't citing Reddit URLs as much" → Reddit's search rankings dropped (or G's &num=100 removal impacted this)
+"LLMs fall for spam listicles" → These rank well in search (unfortunately)
+"LLMs prefer fresh content" → Search engines prioritize recency
+
+You're not discovering AI behavior patterns. You're rediscovering SEO! 
+
+I'm tired & just trying to help 😅  ....it's also the last day to join my last AI Course of 2025 if you wanna level up & evolve your AI SEO thinking, hit me up. 🚀
