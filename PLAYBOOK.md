@@ -1,4 +1,4 @@
-# Playbook
+# Playbook: AI-Powered SEO 
 
 # Recommendations:
 
